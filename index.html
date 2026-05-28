@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardiões da Caatinga</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="home-screen view is-active" id="homeView" aria-label="Menu principal">
+        <div class="brand-panel">
+          <p class="label">Educação ambiental</p>
+          <h1>Guardiões da Caatinga</h1>
+          <p>
+            Aprenda sobre as ameaças da Caatinga e jogue protegendo um dos biomas mais únicos do Brasil.
+          </p>
+        </div>
+
+        <div class="choice-grid">
+          <button class="choice-button" id="learnChoice" type="button">
+            <span>Conhecer Caatinga</span>
+            <small>Veja ameaças, impactos, espécies e atitudes de preservação.</small>
+          </button>
+          <button class="choice-button primary" id="playChoice" type="button">
+            <span>Jogar missão da Caatinga</span>
+            <small>Desvie, colete recursos, use escudos e cumpra objetivos.</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="learn-screen view" id="learnView" aria-label="Ameaças e problemas da Caatinga">
+        <div class="topbar">
+          <button class="small-button" data-go-home type="button">Início</button>
+          <button class="small-button primary" data-go-game type="button">Jogar</button>
+        </div>
+
+        <header class="learn-header">
+          <p class="label">Conhecer Caatinga</p>
+          <h2>Ameaças e problemas da Caatinga</h2>
+          <p>
+            A Caatinga é um bioma do semiárido brasileiro, com plantas resistentes à seca e muitos animais adaptados.
+            Mesmo parecendo forte, ela sofre com ações humanas e precisa de cuidado.
+          </p>
+        </header>
+
+        <section class="map-panel" aria-label="Onde fica a Caatinga">
+          <div>
+            <p class="label">Onde fica?</p>
+            <h3>A Caatinga fica no semiárido brasileiro</h3>
+            <p>
+              Ela aparece principalmente no Nordeste e também no norte de Minas Gerais. É o único bioma exclusivamente
+              brasileiro, por isso cuidar dele é proteger uma parte única do país.
+            </p>
+          </div>
+          <div class="location-card" aria-label="Estados onde a Caatinga ocorre">
+            <p class="label">Região</p>
+            <strong>Nordeste + norte de Minas Gerais</strong>
+            <div class="state-grid" aria-label="Estados">
+              <span>AL</span>
+              <span>BA</span>
+              <span>CE</span>
+              <span>MA</span>
+              <span>MG norte</span>
+              <span>PB</span>
+              <span>PE</span>
+              <span>PI</span>
+              <span>RN</span>
+              <span>SE</span>
+            </div>
+            <small>Lista simplificada para estudo escolar.</small>
+          </div>
+        </section>
+
+        <section class="info-band" aria-label="O que é a Caatinga">
+          <article>
+            <p class="label">Bioma brasileiro</p>
+            <h3>O que é?</h3>
+            <p>A Caatinga existe principalmente no Nordeste do Brasil e tem clima semiárido, com longos períodos de pouca chuva.</p>
+          </article>
+          <article>
+            <p class="label">Vida adaptada</p>
+            <h3>Por que é especial?</h3>
+            <p>Suas plantas guardam água, perdem folhas na seca e voltam a ficar verdes quando a chuva chega.</p>
+          </article>
+          <article>
+            <p class="label">Importância</p>
+            <h3>Por que preservar?</h3>
+            <p>Ela protege o solo, abriga espécies nativas e faz parte da cultura e da vida de muitas comunidades.</p>
+          </article>
+        </section>
+
+        <div class="threat-grid" aria-label="Principais ameaças">
+          <article class="threat-card">
+            <span class="threat-icon fire">Fogo</span>
+            <h3>Queimadas</h3>
+            <p><strong>Causa:</strong> uso do fogo para limpar áreas, descuido e tempo muito seco.</p>
+            <p><strong>Impacto:</strong> destrói plantas, afasta animais, empobrece o solo e espalha fumaça.</p>
+            <p><strong>Cuidado:</strong> não iniciar fogo e avisar adultos quando houver risco de queimada.</p>
+          </article>
+          <article class="threat-card">
+            <span class="threat-icon stump">Corte</span>
+            <h3>Desmatamento</h3>
+            <p><strong>Causa:</strong> retirada da vegetação para madeira, pasto, construções ou uso inadequado do solo.</p>
+            <p><strong>Impacto:</strong> aumenta erosão, calor, perda de biodiversidade e dificuldade de recuperação.</p>
+            <p><strong>Cuidado:</strong> valorizar áreas protegidas e plantar espécies nativas.</p>
+          </article>
+          <article class="threat-card">
+            <span class="threat-icon drought">Seca</span>
+            <h3>Seca e falta de água</h3>
+            <p><strong>Causa:</strong> a seca é natural no semiárido, mas desperdício e degradação pioram o problema.</p>
+            <p><strong>Impacto:</strong> afeta pessoas, animais, plantações e a recuperação da vegetação.</p>
+            <p><strong>Cuidado:</strong> economizar água, proteger nascentes e evitar poluir açudes e rios.</p>
+          </article>
+          <article class="threat-card">
+            <span class="threat-icon trash">Lixo</span>
+            <h3>Lixo no ambiente</h3>
+            <p><strong>Causa:</strong> descarte incorreto em ruas, trilhas, rios, açudes e terrenos.</p>
+            <p><strong>Impacto:</strong> contamina o solo, prejudica animais e pode acumular água parada.</p>
+            <p><strong>Cuidado:</strong> reduzir resíduos, separar recicláveis e descartar no lugar certo.</p>
+          </article>
+        </div>
+
+        <section class="species-panel" aria-label="Plantas e adaptações da Caatinga">
+          <div>
+            <p class="label">Adaptações</p>
+            <h3>Como a vida resiste à seca?</h3>
+            <p>
+              Muitas plantas da Caatinga têm espinhos, raízes profundas, caules que armazenam água e folhas pequenas ou temporárias.
+              Essas adaptações ajudam a sobreviver quando a chuva demora.
+            </p>
+          </div>
+          <div class="species-list">
+            <span>Mandacaru</span>
+            <span>Xique-xique</span>
+            <span>Umbuzeiro</span>
+            <span>Juazeiro</span>
+          </div>
+        </section>
+
+        <section class="care-panel" aria-label="Como ajudar">
+          <h3>Como ajudar</h3>
+          <ul>
+            <li>Economize água e reutilize quando for possível.</li>
+            <li>Não jogue lixo no chão, rios, açudes ou trilhas.</li>
+            <li>Não provoque queimadas e avise adultos quando houver risco de fogo.</li>
+            <li>Valorize plantas nativas, como mandacaru, umbuzeiro, xique-xique e juazeiro.</li>
+            <li>Compartilhe informações corretas sobre a Caatinga e sua importância.</li>
+          </ul>
+        </section>
+
+        <section class="quiz-panel" aria-label="Quiz sobre a Caatinga">
+          <p class="label">Quiz rápido</p>
+          <h3>Qual atitude ajuda mais a preservar a Caatinga?</h3>
+          <div class="quiz-options">
+            <button class="quiz-button" data-correct="false" type="button">Queimar folhas e galhos no quintal</button>
+            <button class="quiz-button" data-correct="true" type="button">Economizar água e descartar lixo corretamente</button>
+            <button class="quiz-button" data-correct="false" type="button">Retirar plantas nativas para abrir espaço</button>
+          </div>
+          <p class="quiz-result" id="quizResult" aria-live="polite">Escolha uma resposta.</p>
+        </section>
+      </section>
+
+      <section class="game-view view" id="gameView" aria-label="Jogo da Caatinga">
+        <div class="topbar">
+          <button class="small-button" data-go-home type="button">Início</button>
+          <button class="small-button" data-go-learn type="button">Conhecer</button>
+          <button class="small-button" id="pauseButton" type="button">Pausar</button>
+        </div>
+
+        <section class="hud" aria-label="Painel do jogo">
+          <div>
+            <p class="label">Pontuação</p>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <p class="label">Recorde</p>
+            <strong id="bestScore">0</strong>
+          </div>
+          <div>
+            <p class="label">Vidas</p>
+            <strong id="lives">3</strong>
+          </div>
+          <div>
+            <p class="label">Combo</p>
+            <strong id="combo">x1</strong>
+          </div>
+          <div>
+            <p class="label">Ameaça</p>
+            <strong id="threat">Seca</strong>
+          </div>
+          <div>
+            <p class="label">Missão</p>
+            <strong id="missionHud">Colete 5 gotas</strong>
+          </div>
+        </section>
+
+        <div class="game-actions">
+          <p id="tipText">Proteja a Caatinga desviando das ameaças e cumprindo a missão.</p>
+          <div class="action-buttons">
+            <button class="small-button" id="soundButton" type="button" aria-pressed="false">Som: desligado</button>
+          </div>
+        </div>
+
+        <section class="stage" id="stage" aria-label="Guardiões da Caatinga">
+          <canvas id="gameCanvas" width="960" height="540" aria-label="Jogo de desviar dos obstáculos da Caatinga"></canvas>
+
+          <div class="overlay is-visible" id="startScreen">
+            <p class="label">Missão</p>
+            <h2 id="missionTitle">Proteja a Caatinga</h2>
+            <p id="missionText">
+              Desvie das ameaças. Pule obstáculos no chão, abaixe quando aparecer o aviso e colete gotas, mudas e escudos.
+              No celular, use os botões ou arraste o dedo na área do jogo para trocar de faixa, pular e deslizar.
+            </p>
+            <fieldset class="threat-select difficulty-select" aria-label="Escolher dificuldade">
+              <legend>Escolha a dificuldade</legend>
+              <button class="difficulty-option" data-difficulty-option="calmo" type="button">Calmo</button>
+              <button class="difficulty-option is-selected" data-difficulty-option="normal" type="button">Normal</button>
+              <button class="difficulty-option" data-difficulty-option="desafio" type="button">Desafio</button>
+            </fieldset>
+            <fieldset class="threat-select" aria-label="Escolher ameaça da rodada">
+              <legend>Escolha a ameaça do cenário</legend>
+              <button class="threat-option is-selected" data-threat-option="Seca" type="button">Seca</button>
+              <button class="threat-option" data-threat-option="Queimada" type="button">Queimadas</button>
+              <button class="threat-option" data-threat-option="Desmatamento" type="button">Desmatamento</button>
+              <button class="threat-option" data-threat-option="Lixo" type="button">Lixo</button>
+            </fieldset>
+            <button id="startButton" type="button">Começar jogo</button>
+          </div>
+
+          <div class="overlay" id="pauseScreen" aria-live="polite">
+            <p class="label">Pausa</p>
+            <h2>Respire e observe</h2>
+            <p>A Caatinga também ensina ritmo: avance com atenção, preserve recursos e use o escudo quando aparecer.</p>
+            <button id="resumeButton" type="button">Retomar missão</button>
+          </div>
+
+          <div class="overlay" id="gameOverScreen" aria-live="polite">
+            <p class="label">Fim de rodada</p>
+            <h2 id="finalScore">0 pontos</h2>
+            <p class="mission-result" id="missionResult">Missão incompleta</p>
+            <p id="lesson">A Caatinga precisa de cuidado todos os dias.</p>
+            <div class="end-actions">
+              <button id="restartButton" type="button">Jogar de novo</button>
+              <button class="small-button" id="studyThreatButton" type="button">Ver explicação</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="mobile-help" aria-label="Instruções do jogo">
+          <strong>Como jogar:</strong> troque de faixa, pule obstáculos no chão e deslize quando aparecer “Abaixe!”. Colete água, mudas e escudos.
+        </section>
+
+        <section class="controls" aria-label="Controles">
+          <button class="control-button" id="leftButton" type="button" aria-label="Mover para a esquerda">◀</button>
+          <button class="control-button" id="upButton" type="button" aria-label="Pular">▲</button>
+          <button class="control-button" id="downButton" type="button" aria-label="Deslizar">▼</button>
+          <button class="control-button" id="rightButton" type="button" aria-label="Mover para a direita">▶</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
