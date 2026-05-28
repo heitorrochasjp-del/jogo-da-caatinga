@@ -183,6 +183,7 @@ function showView(view) {
 
 function updateOrientationClass() {
   const isLandscape = window.innerWidth > window.innerHeight;
+  document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
   document.body.classList.toggle("is-landscape", isLandscape);
   document.body.classList.toggle("is-portrait", !isLandscape);
 }
@@ -1001,10 +1002,21 @@ function bindActionButton(id, action) {
     event.preventDefault();
     button.classList.remove("is-pressed");
   };
-  button.addEventListener("pointerdown", press);
-  button.addEventListener("pointerup", release);
-  button.addEventListener("pointerleave", release);
-  button.addEventListener("pointercancel", release);
+
+  if (window.PointerEvent) {
+    button.addEventListener("pointerdown", press);
+    button.addEventListener("pointerup", release);
+    button.addEventListener("pointerleave", release);
+    button.addEventListener("pointercancel", release);
+  } else {
+    button.addEventListener("touchstart", press, { passive: false });
+    button.addEventListener("touchend", release, { passive: false });
+    button.addEventListener("touchcancel", release, { passive: false });
+    button.addEventListener("mousedown", press);
+    button.addEventListener("mouseup", release);
+    button.addEventListener("mouseleave", release);
+  }
+
   button.addEventListener("contextmenu", (event) => event.preventDefault());
 }
 
@@ -1092,21 +1104,48 @@ bindActionButton("#rightButton", "right");
 bindActionButton("#upButton", "jump");
 bindActionButton("#downButton", "slide");
 
-stage.addEventListener("pointerdown", (event) => {
-  if (state !== "playing") return;
-  event.preventDefault();
-  swipeStart = { x: event.clientX, y: event.clientY };
-  stage.setPointerCapture(event.pointerId);
-});
+if (window.PointerEvent) {
+  stage.addEventListener("pointerdown", (event) => {
+    if (state !== "playing") return;
+    event.preventDefault();
+    swipeStart = { x: event.clientX, y: event.clientY };
+    stage.setPointerCapture(event.pointerId);
+  });
 
-stage.addEventListener("pointermove", (event) => {
-  if (!swipeStart || state !== "playing") return;
-  event.preventDefault();
-  setSwipeDirection(event.clientX - swipeStart.x, event.clientY - swipeStart.y);
-});
+  stage.addEventListener("pointermove", (event) => {
+    if (!swipeStart || state !== "playing") return;
+    event.preventDefault();
+    setSwipeDirection(event.clientX - swipeStart.x, event.clientY - swipeStart.y);
+  });
 
-stage.addEventListener("pointerup", clearSwipeDirection);
-stage.addEventListener("pointercancel", clearSwipeDirection);
+  stage.addEventListener("pointerup", clearSwipeDirection);
+  stage.addEventListener("pointercancel", clearSwipeDirection);
+} else {
+  stage.addEventListener(
+    "touchstart",
+    (event) => {
+      if (state !== "playing") return;
+      event.preventDefault();
+      const touch = event.changedTouches[0];
+      swipeStart = { x: touch.clientX, y: touch.clientY };
+    },
+    { passive: false },
+  );
+
+  stage.addEventListener(
+    "touchmove",
+    (event) => {
+      if (!swipeStart || state !== "playing") return;
+      event.preventDefault();
+      const touch = event.changedTouches[0];
+      setSwipeDirection(touch.clientX - swipeStart.x, touch.clientY - swipeStart.y);
+    },
+    { passive: false },
+  );
+
+  stage.addEventListener("touchend", clearSwipeDirection);
+  stage.addEventListener("touchcancel", clearSwipeDirection);
+}
 
 selectThreat(selectedThreat);
 selectDifficulty(selectedDifficulty);

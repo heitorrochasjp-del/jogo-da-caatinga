@@ -1,5 +1,6 @@
 :root {
   color-scheme: light;
+  --app-height: 100vh;
   --ground: #d69f58;
   --ink: #20312a;
   --leaf: #2f7d54;
@@ -33,6 +34,11 @@ body {
 
 body.game-mode {
   overscroll-behavior: none;
+}
+
+body.game-mode,
+body.game-mode * {
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -682,14 +688,14 @@ canvas {
 
 @media (max-width: 520px) {
   body.game-mode {
-    height: 100dvh;
+    height: var(--app-height);
     overflow: hidden;
     padding: 6px;
   }
 
   body.game-mode .app-shell,
   body.game-mode .game-view.is-active {
-    height: calc(100dvh - 12px);
+    height: calc(var(--app-height) - 12px);
   }
 
   body.game-mode .game-view.is-active {
@@ -794,24 +800,26 @@ canvas {
     border-radius: 8px;
     background: rgba(255, 249, 237, 0.9);
     border: 2px solid rgba(32, 49, 42, 0.16);
+    touch-action: none;
   }
 
   .control-button {
     min-height: 62px;
     font-size: 1.65rem;
+    touch-action: none;
   }
 }
 
 @media (orientation: landscape) and (max-height: 520px) {
   body.game-mode {
-    height: 100dvh;
+    height: var(--app-height);
     overflow: hidden;
     padding: 6px;
   }
 
   body.game-mode .app-shell,
   body.game-mode .game-view.is-active {
-    height: calc(100dvh - 12px);
+    height: calc(var(--app-height) - 12px);
     width: 100%;
   }
 
